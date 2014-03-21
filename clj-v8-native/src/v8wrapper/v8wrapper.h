@@ -18,6 +18,8 @@ extern "C" {
   // free memory returned from the last run call
   int cleanup(void *lastresult);
 
+  const char* get_version();
+
 
 #ifdef __cplusplus
 }

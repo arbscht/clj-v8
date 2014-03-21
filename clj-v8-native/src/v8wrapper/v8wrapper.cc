@@ -208,3 +208,7 @@ int cleanup(void* lastresult) {
   free(lastresult);
   return 0;
 }
+
+const char* get_version() {
+  return v8::V8::GetVersion();
+}

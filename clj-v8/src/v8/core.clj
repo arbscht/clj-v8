@@ -47,6 +47,7 @@
 (def run-fn (.getFunction LIBRARY "run"))
 (def create-tuple-fn (.getFunction LIBRARY "create_tuple"))
 (def cleanup-tuple-fn (.getFunction LIBRARY "cleanup_tuple"))
+(def get-version-fn (.getFunction LIBRARY "get_version"))
 
 (defn create-context
   "Creates a V8 context and associated structures"
@@ -77,3 +78,9 @@
       (run-script-in-context cx script)
       (finally
         (cleanup-context cx)))))
+
+(defn get-version
+  "Gets the version string as given by the V8 library"
+  []
+  (.invoke get-version-fn java.lang.String (into-array [])))
+
